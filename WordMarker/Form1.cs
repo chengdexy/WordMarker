@@ -94,21 +94,21 @@ namespace WordMarker
         {
             Shape watermark = new Shape(doc, ShapeType.TextPlainText);
 
-            watermark.TextPath.Text = watermarkText;
-            watermark.TextPath.FontFamily = "Arial";
-            watermark.Width = 500;
-            watermark.Height = 100;
+            watermark.TextPath.Text = watermarkText;    //水印文本
+            watermark.TextPath.FontFamily = "Arial";    //水印字体
+            watermark.Width = 500;  //水印宽度
+            watermark.Height = 100; //水印高度 (px)
 
-            watermark.Rotation = -40;
+            watermark.Rotation = -40;   //旋转
 
             watermark.Fill.Color = Color.Gray;
             watermark.StrokeColor = Color.Gray;
 
-            watermark.RelativeHorizontalPosition = RelativeHorizontalPosition.Page;
-            watermark.RelativeVerticalPosition = RelativeVerticalPosition.Page;
+            watermark.RelativeHorizontalPosition = RelativeHorizontalPosition.Page; //相对页面的水平位置
+            watermark.RelativeVerticalPosition = RelativeVerticalPosition.Page; //相对页面的垂直位置, 这两条确定了页面居中
             watermark.WrapType = WrapType.None;
-            watermark.VerticalAlignment = Aspose.Words.Drawing.VerticalAlignment.Center;
-            watermark.HorizontalAlignment = Aspose.Words.Drawing.HorizontalAlignment.Center;
+            watermark.VerticalAlignment = Aspose.Words.Drawing.VerticalAlignment.Center;    //垂直对齐方式
+            watermark.HorizontalAlignment = Aspose.Words.Drawing.HorizontalAlignment.Center;    //水平对齐方式
 
             Paragraph watermarkPara = new Paragraph(doc);
             watermarkPara.AppendChild(watermark);

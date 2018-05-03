@@ -21,29 +21,21 @@ namespace WordMarker
             InitializeComponent();
         }
 
-        private void btnGetDocSrcPath_Click(object sender, EventArgs e)
-        {
-            ofdChooseSrcDoc.ShowDialog();
-            txtDocSrcPath.Text = ofdChooseSrcDoc.FileName;
-            txtMarkMaxNumber.Enabled = true;
-            btnStart.Enabled = true;
-        }
-
         private void btnStart_Click(object sender, EventArgs e)
         {
             //确保已经选择了源文档
-            if (string.IsNullOrEmpty(txtDocSrcPath.Text) || (!File.Exists(txtDocSrcPath.Text.Trim())))
+            if (string.IsNullOrEmpty(lblSource.Text) || (!File.Exists(lblSource.Text.Trim())))
             {
                 MessageBox.Show("请选择要添加水印的源文档.");
-                btnGetDocSrcPath.Focus();
+                lblSource.Focus();
                 return;
             }
             // 检查编号文本框内容合法性
-            if (!int.TryParse(txtMarkMaxNumber.Text.Trim(), out int maxNumber))
+            if (!int.TryParse(lblSource.Text.Trim(), out int maxNumber))
             {
-                txtMarkMaxNumber.SelectAll();
-                MessageBox.Show("编号必须为纯数字.");
-                txtMarkMaxNumber.Focus();
+                //txtMarkMaxNumber.SelectAll();
+                //MessageBox.Show("编号必须为纯数字.");
+                //txtMarkMaxNumber.Focus();
                 return;
             }
             // 生成编号文本数组
@@ -61,9 +53,9 @@ namespace WordMarker
         #region private methods
         private void CreatDocWithMarkText(string markText)
         {
-            Document doc = new Document(txtDocSrcPath.Text.Trim());
+            Document doc = new Document(lblSource.Text.Trim());
             InsertWatermarkText(doc, markText);
-            doc.Save(Path.GetDirectoryName(txtDocSrcPath.Text.Trim()) + @"\output\" + markText + Path.GetExtension(txtDocSrcPath.Text.Trim()));
+            doc.Save(Path.GetDirectoryName(lblSource.Text.Trim()) + @"\output\" + markText + Path.GetExtension(lblSource.Text.Trim()));
         }
 
         private string[] GetMarkText(int maxNumber)
@@ -136,5 +128,69 @@ namespace WordMarker
             header.AppendChild(watermarkPara.Clone(true));
         }
         #endregion
+
+        //设置字体文本框
+        private void txtFont_Click(object sender, EventArgs e)
+        {
+            fontDialog.ShowDialog();
+            System.Drawing.Font f = fontDialog.Font;
+            txtFont.Text = f.Name;
+            txtFont.Font = f;
+        }
+
+        //设置水印文字颜色
+        private void picFontColor_Click(object sender, EventArgs e)
+        {
+            colorDialog.ShowDialog();
+            Color c = colorDialog.Color;
+            picFontColor.BackColor = c;
+
+        }
+
+        //选择源文档
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            ofdChooseSrcDoc.ShowDialog();
+            lblSource.Text = "源 文 档：" + ofdChooseSrcDoc.FileName;
+        }
+
+        //重置按钮
+        private void btnRetry_Click(object sender, EventArgs e)
+        {
+            rdoSolid.Checked = true;
+            rdoOrdered.Checked = false;
+
+            txtSolidText.Text = "";
+            txtSolidText.Enabled = true;
+
+            txtNumber.Text = "";
+            txtNumber.Enabled = true;
+
+            txtOrderStart.Text = "0";
+            txtOrderEnd.Text = "0";
+            lblNumber.Text = "共0份";
+
+            txtFont.Text = "宋体";
+            txtFont.Font = new System.Drawing.Font("宋体", 11);   //应定义全局变量存储默认值
+            txtFontSize.Text = "11";
+
+            picFontColor.BackColor = Color.Black;
+            chkRepeat.Checked = false;
+
+            txtRotation.Text = "-40";
+
+            ofdChooseSrcDoc.FileName = "";
+            saveFileDialog.FileName = "";
+            lblSource.Text = "源 文 档：";
+            lblTarget.Text = "存储位置：";
+
+        }
+
+        // 选择存储位置
+        private void btnTarget_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.ShowDialog();
+            lblTarget.Text = "存储位置：" + saveFileDialog.FileName;
+        }
     }
 }

@@ -66,6 +66,8 @@
             this.folderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statBar.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderEnd)).BeginInit();
@@ -87,12 +89,13 @@
             // 
             // statBar
             // 
+            this.statBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
             this.statBar.Location = new System.Drawing.Point(0, 526);
             this.statBar.Name = "statBar";
             this.statBar.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
             this.statBar.Size = new System.Drawing.Size(1046, 22);
             this.statBar.TabIndex = 6;
-            this.statBar.Text = "statusStrip1";
             // 
             // btnOpen
             // 
@@ -486,6 +489,12 @@
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(312, 17);
+            this.toolStripStatusLabel1.Text = "中共承德市双桥区委办公室薛源出品 www.chengdexy.cn";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -506,12 +515,15 @@
             this.Controls.Add(this.lblSource);
             this.Font = new System.Drawing.Font("宋体", 11F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WordMarker v2.0b by Chengdexy.cn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
+            this.statBar.ResumeLayout(false);
+            this.statBar.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -570,6 +582,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picPreview;
         private System.Windows.Forms.NumericUpDown numRotation;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 

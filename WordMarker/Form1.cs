@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aspose.Words;
 using Aspose.Words.Drawing;
-using Aspose.Words.Fields;
 
 namespace WordMarker
 {
@@ -43,10 +37,12 @@ namespace WordMarker
                 //确保已经选择了源文档
                 if (string.IsNullOrEmpty(lblSource.Text) || (!File.Exists(lblSource.Text.Trim())))
                 {
-                    MessageBox.Show("请选择要添加水印的源文档.");
+                    MessageBox.Show("请选择要添加水印的源文档.", "选择源文档", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnOpen.Focus();
                     return;
                 }
+                //这里开始锁死窗体防止用户误操作
+                this.Enabled = false;
                 //todo: 确保已经选择了输出目录
                 if (markTextSolid)
                 {
@@ -66,9 +62,10 @@ namespace WordMarker
                         CreatDocWithMarkText(str);
                     }
                 }
-                MessageBox.Show("添加水印完成.");
+                MessageBox.Show("添加水印完成!", "成功", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblSource.Text = "";
                 lblTarget.Text = "";
+                this.Enabled = true;
             };
 
 
@@ -382,6 +379,14 @@ namespace WordMarker
         private void rdoSolid_CheckedChanged(object sender, EventArgs e)
         {
             ChangeRadioChecking();
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("确定要退出吗?", "退出确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -44,6 +44,7 @@
             this.txtSolidText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.numRotation = new System.Windows.Forms.NumericUpDown();
             this.picPreview = new System.Windows.Forms.PictureBox();
             this.numMarkHeight = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,19 +66,18 @@
             this.folderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.numRotation = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderStart)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numRotation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMarkHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMarkWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFontColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numRotation)).BeginInit();
             this.SuspendLayout();
             // 
             // ofdChooseSrcDoc
@@ -100,7 +100,7 @@
             this.btnOpen.Location = new System.Drawing.Point(16, 15);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(200, 200);
-            this.btnOpen.TabIndex = 7;
+            this.btnOpen.TabIndex = 1;
             this.btnOpen.Text = "选择源文档";
             this.btnOpen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             this.btnTarget.Location = new System.Drawing.Point(16, 221);
             this.btnTarget.Name = "btnTarget";
             this.btnTarget.Size = new System.Drawing.Size(200, 200);
-            this.btnTarget.TabIndex = 8;
+            this.btnTarget.TabIndex = 2;
             this.btnTarget.Text = "选择存储位置";
             this.btnTarget.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTarget.UseVisualStyleBackColor = true;
@@ -125,7 +125,7 @@
             this.rdoSolid.Location = new System.Drawing.Point(33, 32);
             this.rdoSolid.Name = "rdoSolid";
             this.rdoSolid.Size = new System.Drawing.Size(220, 19);
-            this.rdoSolid.TabIndex = 1;
+            this.rdoSolid.TabIndex = 3;
             this.rdoSolid.TabStop = true;
             this.rdoSolid.Text = "为每一份输出添加固定的文本";
             this.rdoSolid.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             this.rdoOrdered.Location = new System.Drawing.Point(325, 32);
             this.rdoOrdered.Name = "rdoOrdered";
             this.rdoOrdered.Size = new System.Drawing.Size(250, 19);
-            this.rdoOrdered.TabIndex = 2;
+            this.rdoOrdered.TabIndex = 4;
             this.rdoOrdered.Text = "为每一份输出添加各异的数字编号";
             this.rdoOrdered.UseVisualStyleBackColor = true;
             // 
@@ -177,7 +177,7 @@
             0});
             this.numOrderEnd.Name = "numOrderEnd";
             this.numOrderEnd.Size = new System.Drawing.Size(68, 24);
-            this.numOrderEnd.TabIndex = 10;
+            this.numOrderEnd.TabIndex = 7;
             this.numOrderEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numOrderEnd.ValueChanged += new System.EventHandler(this.numOrderEnd_ValueChanged);
             // 
@@ -191,7 +191,7 @@
             0});
             this.numOrderStart.Name = "numOrderStart";
             this.numOrderStart.Size = new System.Drawing.Size(68, 24);
-            this.numOrderStart.TabIndex = 9;
+            this.numOrderStart.TabIndex = 6;
             this.numOrderStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
@@ -217,7 +217,7 @@
             this.txtSolidText.Location = new System.Drawing.Point(119, 31);
             this.txtSolidText.Name = "txtSolidText";
             this.txtSolidText.Size = new System.Drawing.Size(188, 24);
-            this.txtSolidText.TabIndex = 1;
+            this.txtSolidText.TabIndex = 5;
             this.txtSolidText.TabStop = false;
             // 
             // label3
@@ -250,6 +250,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "水印风格设置：";
             // 
+            // numRotation
+            // 
+            this.numRotation.Location = new System.Drawing.Point(119, 187);
+            this.numRotation.Maximum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            this.numRotation.Minimum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            -2147483648});
+            this.numRotation.Name = "numRotation";
+            this.numRotation.Size = new System.Drawing.Size(78, 24);
+            this.numRotation.TabIndex = 11;
+            this.numRotation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // picPreview
             // 
             this.picPreview.Location = new System.Drawing.Point(452, 24);
@@ -273,7 +291,7 @@
             0});
             this.numMarkHeight.Name = "numMarkHeight";
             this.numMarkHeight.Size = new System.Drawing.Size(85, 24);
-            this.numMarkHeight.TabIndex = 14;
+            this.numMarkHeight.TabIndex = 9;
             this.numMarkHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numMarkHeight.Value = new decimal(new int[] {
             10,
@@ -314,7 +332,7 @@
             0});
             this.numMarkWidth.Name = "numMarkWidth";
             this.numMarkWidth.Size = new System.Drawing.Size(78, 24);
-            this.numMarkWidth.TabIndex = 11;
+            this.numMarkWidth.TabIndex = 8;
             this.numMarkWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numMarkWidth.Value = new decimal(new int[] {
             10,
@@ -367,7 +385,7 @@
             this.txtFont.Name = "txtFont";
             this.txtFont.ReadOnly = true;
             this.txtFont.Size = new System.Drawing.Size(188, 24);
-            this.txtFont.TabIndex = 1;
+            this.txtFont.TabIndex = 10;
             this.txtFont.Click += new System.EventHandler(this.txtFont_Click);
             // 
             // label8
@@ -388,52 +406,60 @@
             // 
             // btnRetry
             // 
+            this.btnRetry.Font = new System.Drawing.Font("宋体", 10F);
             this.btnRetry.Image = ((System.Drawing.Image)(resources.GetObject("btnRetry.Image")));
-            this.btnRetry.Location = new System.Drawing.Point(510, 451);
+            this.btnRetry.Location = new System.Drawing.Point(461, 449);
             this.btnRetry.Name = "btnRetry";
-            this.btnRetry.Size = new System.Drawing.Size(150, 60);
-            this.btnRetry.TabIndex = 11;
+            this.btnRetry.Size = new System.Drawing.Size(182, 60);
+            this.btnRetry.TabIndex = 12;
             this.btnRetry.Text = "重置为默认";
+            this.btnRetry.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRetry.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnRetry.UseVisualStyleBackColor = true;
             this.btnRetry.Click += new System.EventHandler(this.btnRetry_Click);
             // 
             // btnSave
             // 
+            this.btnSave.Font = new System.Drawing.Font("宋体", 10F);
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.Location = new System.Drawing.Point(666, 451);
+            this.btnSave.Location = new System.Drawing.Point(643, 449);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 60);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.Size = new System.Drawing.Size(182, 60);
+            this.btnSave.TabIndex = 13;
             this.btnSave.Text = "保存为默认";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnStart
             // 
+            this.btnStart.Font = new System.Drawing.Font("宋体", 10F);
             this.btnStart.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.Image")));
-            this.btnStart.Location = new System.Drawing.Point(822, 451);
+            this.btnStart.Location = new System.Drawing.Point(825, 449);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(150, 60);
-            this.btnStart.TabIndex = 13;
+            this.btnStart.Size = new System.Drawing.Size(182, 60);
+            this.btnStart.TabIndex = 14;
             this.btnStart.Text = "开始加水印";
+            this.btnStart.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnStart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // lblSource
             // 
+            this.lblSource.AutoSize = true;
             this.lblSource.Location = new System.Drawing.Point(55, 454);
             this.lblSource.Name = "lblSource";
-            this.lblSource.Size = new System.Drawing.Size(400, 15);
+            this.lblSource.Size = new System.Drawing.Size(0, 15);
             this.lblSource.TabIndex = 14;
             // 
             // lblTarget
             // 
+            this.lblTarget.AutoSize = true;
             this.lblTarget.Location = new System.Drawing.Point(55, 494);
             this.lblTarget.Name = "lblTarget";
-            this.lblTarget.Size = new System.Drawing.Size(400, 15);
+            this.lblTarget.Size = new System.Drawing.Size(0, 15);
             this.lblTarget.TabIndex = 15;
             // 
             // folderDialog
@@ -460,24 +486,6 @@
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
-            // numRotation
-            // 
-            this.numRotation.Location = new System.Drawing.Point(119, 187);
-            this.numRotation.Maximum = new decimal(new int[] {
-            90,
-            0,
-            0,
-            0});
-            this.numRotation.Minimum = new decimal(new int[] {
-            90,
-            0,
-            0,
-            -2147483648});
-            this.numRotation.Name = "numRotation";
-            this.numRotation.Size = new System.Drawing.Size(78, 24);
-            this.numRotation.TabIndex = 16;
-            this.numRotation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -485,8 +493,6 @@
             this.ClientSize = new System.Drawing.Size(1046, 548);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lblTarget);
-            this.Controls.Add(this.lblSource);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnRetry);
@@ -496,12 +502,15 @@
             this.Controls.Add(this.btnTarget);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.statBar);
+            this.Controls.Add(this.lblTarget);
+            this.Controls.Add(this.lblSource);
             this.Font = new System.Drawing.Font("宋体", 11F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WordMarker v2.0b by Chengdexy.cn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -511,13 +520,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numOrderStart)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numRotation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPreview)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMarkHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMarkWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFontColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numRotation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

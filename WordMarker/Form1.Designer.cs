@@ -92,17 +92,17 @@
             this.statBar.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statBar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statBar.Location = new System.Drawing.Point(0, 523);
+            this.statBar.Location = new System.Drawing.Point(0, 526);
             this.statBar.Name = "statBar";
             this.statBar.Padding = new System.Windows.Forms.Padding(1, 0, 18, 0);
-            this.statBar.Size = new System.Drawing.Size(1046, 25);
+            this.statBar.Size = new System.Drawing.Size(1046, 22);
             this.statBar.TabIndex = 6;
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(218, 20);
-            this.toolStripStatusLabel1.Text = "薛源作品: www.chengdexy.cn";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(174, 17);
+            this.toolStripStatusLabel1.Text = "http://chengdexy.cn 薛源作品";
             // 
             // btnOpen
             // 
@@ -134,7 +134,7 @@
             this.rdoSolid.Checked = true;
             this.rdoSolid.Location = new System.Drawing.Point(33, 32);
             this.rdoSolid.Name = "rdoSolid";
-            this.rdoSolid.Size = new System.Drawing.Size(277, 23);
+            this.rdoSolid.Size = new System.Drawing.Size(220, 19);
             this.rdoSolid.TabIndex = 3;
             this.rdoSolid.TabStop = true;
             this.rdoSolid.Text = "为每一份输出添加固定的文本";
@@ -146,7 +146,7 @@
             this.rdoOrdered.AutoSize = true;
             this.rdoOrdered.Location = new System.Drawing.Point(325, 32);
             this.rdoOrdered.Name = "rdoOrdered";
-            this.rdoOrdered.Size = new System.Drawing.Size(315, 23);
+            this.rdoOrdered.Size = new System.Drawing.Size(250, 19);
             this.rdoOrdered.TabIndex = 4;
             this.rdoOrdered.Text = "为每一份输出添加各异的数字编号";
             this.rdoOrdered.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             0,
             0});
             this.numOrderEnd.Name = "numOrderEnd";
-            this.numOrderEnd.Size = new System.Drawing.Size(68, 28);
+            this.numOrderEnd.Size = new System.Drawing.Size(68, 24);
             this.numOrderEnd.TabIndex = 7;
             this.numOrderEnd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numOrderEnd.ValueChanged += new System.EventHandler(this.numOrderEnd_ValueChanged);
@@ -200,7 +200,7 @@
             0,
             0});
             this.numOrderStart.Name = "numOrderStart";
-            this.numOrderStart.Size = new System.Drawing.Size(68, 28);
+            this.numOrderStart.Size = new System.Drawing.Size(68, 24);
             this.numOrderStart.TabIndex = 6;
             this.numOrderStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -209,7 +209,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(512, 34);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 19);
+            this.label6.Size = new System.Drawing.Size(22, 15);
             this.label6.TabIndex = 7;
             this.label6.Text = "—";
             // 
@@ -218,7 +218,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(350, 34);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 19);
+            this.label5.Size = new System.Drawing.Size(82, 15);
             this.label5.TabIndex = 4;
             this.label5.Text = "自动编号：";
             // 
@@ -226,7 +226,7 @@
             // 
             this.txtSolidText.Location = new System.Drawing.Point(119, 31);
             this.txtSolidText.Name = "txtSolidText";
-            this.txtSolidText.Size = new System.Drawing.Size(188, 28);
+            this.txtSolidText.Size = new System.Drawing.Size(188, 24);
             this.txtSolidText.TabIndex = 5;
             this.txtSolidText.TabStop = false;
             // 
@@ -235,7 +235,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(33, 34);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 19);
+            this.label3.Size = new System.Drawing.Size(82, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "固定文本：";
             // 
@@ -274,7 +274,7 @@
             0,
             -2147483648});
             this.numRotation.Name = "numRotation";
-            this.numRotation.Size = new System.Drawing.Size(78, 28);
+            this.numRotation.Size = new System.Drawing.Size(78, 24);
             this.numRotation.TabIndex = 11;
             this.numRotation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -300,7 +300,7 @@
             0,
             0});
             this.numMarkHeight.Name = "numMarkHeight";
-            this.numMarkHeight.Size = new System.Drawing.Size(85, 28);
+            this.numMarkHeight.Size = new System.Drawing.Size(85, 24);
             this.numMarkHeight.TabIndex = 9;
             this.numMarkHeight.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numMarkHeight.Value = new decimal(new int[] {
@@ -314,7 +314,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(282, 51);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 19);
+            this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 13;
             this.label2.Text = "高(px)";
             // 
@@ -323,7 +323,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(121, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 19);
+            this.label1.Size = new System.Drawing.Size(54, 15);
             this.label1.TabIndex = 12;
             this.label1.Text = "宽(px)";
             // 
@@ -341,7 +341,7 @@
             0,
             0});
             this.numMarkWidth.Name = "numMarkWidth";
-            this.numMarkWidth.Size = new System.Drawing.Size(78, 28);
+            this.numMarkWidth.Size = new System.Drawing.Size(78, 24);
             this.numMarkWidth.TabIndex = 8;
             this.numMarkWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numMarkWidth.Value = new decimal(new int[] {
@@ -355,7 +355,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(33, 192);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 19);
+            this.label11.Size = new System.Drawing.Size(82, 15);
             this.label11.TabIndex = 8;
             this.label11.Text = "倾斜角度：";
             // 
@@ -375,7 +375,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(33, 145);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(104, 19);
+            this.label10.Size = new System.Drawing.Size(82, 15);
             this.label10.TabIndex = 4;
             this.label10.Text = "设置颜色：";
             // 
@@ -384,7 +384,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(33, 51);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(104, 19);
+            this.label9.Size = new System.Drawing.Size(82, 15);
             this.label9.TabIndex = 2;
             this.label9.Text = "水印大小：";
             // 
@@ -394,7 +394,7 @@
             this.txtFont.Location = new System.Drawing.Point(119, 93);
             this.txtFont.Name = "txtFont";
             this.txtFont.ReadOnly = true;
-            this.txtFont.Size = new System.Drawing.Size(188, 28);
+            this.txtFont.Size = new System.Drawing.Size(188, 24);
             this.txtFont.TabIndex = 10;
             this.txtFont.Click += new System.EventHandler(this.txtFont_Click);
             // 
@@ -403,7 +403,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(33, 98);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 19);
+            this.label8.Size = new System.Drawing.Size(82, 15);
             this.label8.TabIndex = 0;
             this.label8.Text = "设置字体：";
             // 
@@ -461,7 +461,7 @@
             this.lblSource.AutoSize = true;
             this.lblSource.Location = new System.Drawing.Point(55, 454);
             this.lblSource.Name = "lblSource";
-            this.lblSource.Size = new System.Drawing.Size(0, 19);
+            this.lblSource.Size = new System.Drawing.Size(0, 15);
             this.lblSource.TabIndex = 14;
             // 
             // lblTarget
@@ -469,7 +469,7 @@
             this.lblTarget.AutoSize = true;
             this.lblTarget.Location = new System.Drawing.Point(55, 494);
             this.lblTarget.Name = "lblTarget";
-            this.lblTarget.Size = new System.Drawing.Size(0, 19);
+            this.lblTarget.Size = new System.Drawing.Size(0, 15);
             this.lblTarget.TabIndex = 15;
             // 
             // folderDialog
@@ -498,7 +498,7 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1046, 548);
             this.Controls.Add(this.pictureBox2);

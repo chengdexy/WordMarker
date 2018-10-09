@@ -329,5 +329,10 @@ namespace WordMarker {
                 e.Cancel = true;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e) {
+            var frm = new Form2();
+            frm.ShowDialog();
+        }
     }
 }

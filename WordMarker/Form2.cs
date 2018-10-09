@@ -55,5 +55,11 @@ namespace WordMarker {
             });
             this.Enabled = true;
         }
+
+        private void button2_Click(object sender, EventArgs e) {
+            openFileDialog2.ShowDialog();
+            filePath = Path.GetDirectoryName(openFileDialog2.FileName);
+            MessageBox.Show(filePath);
+        }
     }
 }

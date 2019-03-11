@@ -331,6 +331,10 @@ namespace WordMarker {
         }
 
         private void button1_Click(object sender, EventArgs e) {
+            
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e) {
             var frm = new Form2();
             frm.ShowDialog();
         }

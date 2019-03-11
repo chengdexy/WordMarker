@@ -24,77 +24,44 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblTarget = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnStart = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnChangeOutputForder = new System.Windows.Forms.Button();
+            this.grpOutputForder = new System.Windows.Forms.GroupBox();
+            this.txtOutputForder = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.grpChosePrinter = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.fbdOutput = new System.Windows.Forms.FolderBrowserDialog();
+            this.lnkPrinterOpt = new System.Windows.Forms.LinkLabel();
+            this.grpOutputForder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.grpChosePrinter.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(9, 10);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(15, 16);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 19;
-            this.pictureBox2.TabStop = false;
-            // 
-            // lblTarget
-            // 
-            this.lblTarget.AutoSize = true;
-            this.lblTarget.Location = new System.Drawing.Point(38, 12);
-            this.lblTarget.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTarget.Name = "lblTarget";
-            this.lblTarget.Size = new System.Drawing.Size(0, 12);
-            this.lblTarget.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 12);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "打印机:";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(9, 65);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Location = new System.Drawing.Point(51, 49);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 20);
+            this.comboBox1.Size = new System.Drawing.Size(398, 20);
             this.comboBox1.TabIndex = 23;
             // 
-            // button1
+            // btnStart
             // 
-            this.button1.Location = new System.Drawing.Point(9, 113);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 18);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 155);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "label2";
+            this.btnStart.Location = new System.Drawing.Point(467, 204);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(108, 30);
+            this.btnStart.TabIndex = 24;
+            this.btnStart.Text = "开始批量打印";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // openFileDialog1
             // 
@@ -104,48 +71,128 @@
             // 
             this.openFileDialog2.FileName = "openFileDialog2";
             // 
-            // button2
+            // btnChangeOutputForder
             // 
-            this.button2.Location = new System.Drawing.Point(371, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnChangeOutputForder.Location = new System.Drawing.Point(455, 44);
+            this.btnChangeOutputForder.Name = "btnChangeOutputForder";
+            this.btnChangeOutputForder.Size = new System.Drawing.Size(34, 23);
+            this.btnChangeOutputForder.TabIndex = 26;
+            this.btnChangeOutputForder.Text = "...";
+            this.btnChangeOutputForder.UseVisualStyleBackColor = true;
+            this.btnChangeOutputForder.Click += new System.EventHandler(this.btnChangeOutputForder_Click);
+            // 
+            // grpOutputForder
+            // 
+            this.grpOutputForder.Controls.Add(this.txtOutputForder);
+            this.grpOutputForder.Controls.Add(this.btnChangeOutputForder);
+            this.grpOutputForder.Controls.Add(this.pictureBox2);
+            this.grpOutputForder.Location = new System.Drawing.Point(12, 12);
+            this.grpOutputForder.Name = "grpOutputForder";
+            this.grpOutputForder.Size = new System.Drawing.Size(576, 82);
+            this.grpOutputForder.TabIndex = 27;
+            this.grpOutputForder.TabStop = false;
+            this.grpOutputForder.Text = "选择或更改输出文件夹";
+            // 
+            // txtOutputForder
+            // 
+            this.txtOutputForder.Location = new System.Drawing.Point(51, 46);
+            this.txtOutputForder.Name = "txtOutputForder";
+            this.txtOutputForder.Size = new System.Drawing.Size(398, 21);
+            this.txtOutputForder.TabIndex = 21;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(14, 35);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 20;
+            this.pictureBox2.TabStop = false;
+            // 
+            // grpChosePrinter
+            // 
+            this.grpChosePrinter.Controls.Add(this.lnkPrinterOpt);
+            this.grpChosePrinter.Controls.Add(this.pictureBox1);
+            this.grpChosePrinter.Controls.Add(this.comboBox1);
+            this.grpChosePrinter.Location = new System.Drawing.Point(12, 100);
+            this.grpChosePrinter.Name = "grpChosePrinter";
+            this.grpChosePrinter.Size = new System.Drawing.Size(576, 88);
+            this.grpChosePrinter.TabIndex = 27;
+            this.grpChosePrinter.TabStop = false;
+            this.grpChosePrinter.Text = "选择输出打印机";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(14, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblResult.Location = new System.Drawing.Point(17, 213);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(0, 12);
+            this.lblResult.TabIndex = 28;
+            // 
+            // lnkPrinterOpt
+            // 
+            this.lnkPrinterOpt.AutoSize = true;
+            this.lnkPrinterOpt.Location = new System.Drawing.Point(454, 52);
+            this.lnkPrinterOpt.Name = "lnkPrinterOpt";
+            this.lnkPrinterOpt.Size = new System.Drawing.Size(65, 12);
+            this.lnkPrinterOpt.TabIndex = 25;
+            this.lnkPrinterOpt.TabStop = true;
+            this.lnkPrinterOpt.Text = "打印首选项";
+            this.lnkPrinterOpt.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkPrinterOpt_LinkClicked);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 360);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.lblTarget);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(600, 250);
+            this.Controls.Add(this.lblResult);
+            this.Controls.Add(this.grpChosePrinter);
+            this.Controls.Add(this.grpOutputForder);
+            this.Controls.Add(this.btnStart);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "批量打印工具 v1.0";
             this.Load += new System.EventHandler(this.Form2_Load);
+            this.grpOutputForder.ResumeLayout(false);
+            this.grpOutputForder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.grpChosePrinter.ResumeLayout(false);
+            this.grpChosePrinter.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label lblTarget;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnChangeOutputForder;
+        private System.Windows.Forms.GroupBox grpOutputForder;
+        private System.Windows.Forms.TextBox txtOutputForder;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox grpChosePrinter;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.FolderBrowserDialog fbdOutput;
+        private System.Windows.Forms.LinkLabel lnkPrinterOpt;
     }
 }

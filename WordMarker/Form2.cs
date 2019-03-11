@@ -24,7 +24,7 @@ namespace WordMarker {
 
         private void Form2_Load(object sender, EventArgs e) {
             //获取添加水印后文件存放位置
-            lblTarget.Text = filePath;
+            txtOutputForder.Text = filePath;
 
             //获取可用打印机名单,加入combobox
             string defaultPrinter = (new System.Drawing.Printing.PrintDocument()).PrinterSettings.PrinterName;
@@ -37,29 +37,52 @@ namespace WordMarker {
             //逐个打印文件(这里涉及前面的文件名列表排序
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void btnChangeOutputForder_Click(object sender, EventArgs e) {
+            fbdOutput.ShowDialog();
+            filePath = fbdOutput.SelectedPath;
+            txtOutputForder.Text = filePath;
+        }
+
+        private void btnStart_Click(object sender, EventArgs e) {
+            //this.Enabled = false;
             //获取添加水印后的文件名列表
             List<string> fileNameList = new List<string>();
             DirectoryInfo fileList = new DirectoryInfo(filePath);
             foreach (FileInfo file in fileList.GetFiles()) {
                 fileNameList.Add(file.FullName);
             }
-            this.Enabled = false;
+            Disables();
+            var counter = 1;
             fileNameList.ForEach(fileName => {
-                Document doc = new Document(fileName);
                 var printer = comboBox1.Text.Trim();
                 var fileCount = fileNameList.Count;
-                var counter = 1;
-                label1.Text = $"正在将文件发送到打印机:{printer} ({counter}/{fileCount})";
+                //var counter = 1;
+                lblResult.Text = $"正在将文件发送到打印机:{printer} ({counter}/{fileCount})";
+                this.Refresh();
+                Document doc = new Document(fileName);
                 doc.Print(comboBox1.Text.Trim());
+                counter++;
             });
-            this.Enabled = true;
+            Enables();
+            lblResult.Text = $"所有文档（{fileNameList.Count}）已发送至打印机。可以关闭此工具。";
         }
 
-        private void button2_Click(object sender, EventArgs e) {
-            openFileDialog2.ShowDialog();
-            filePath = Path.GetDirectoryName(openFileDialog2.FileName);
-            MessageBox.Show(filePath);
+        private void Enables() {
+            this.grpChosePrinter.Enabled = true;
+            this.grpOutputForder.Enabled = true;
+            this.btnStart.Enabled = true;
+        }
+
+        private void Disables() {
+            this.grpChosePrinter.Enabled = false;
+            this.grpOutputForder.Enabled = false;
+            this.btnStart.Enabled = false;
+        }
+
+        private void lnkPrinterOpt_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            string PcName = System.Environment.MachineName;
+            string PrinterName = this.comboBox1.Text;
+            System.Diagnostics.Process.Start("rundll32.exe", $@"printui.dll,PrintUIEntry /e /n\\{PcName}\\" + $"\"{PrinterName}\"");
         }
     }
 }

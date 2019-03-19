@@ -37,7 +37,10 @@
             this.rdoSolid = new System.Windows.Forms.RadioButton();
             this.rdoOrdered = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rdoNames = new System.Windows.Forms.RadioButton();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnEditNames = new System.Windows.Forms.Button();
             this.numOrderEnd = new System.Windows.Forms.NumericUpDown();
             this.numOrderStart = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -67,9 +70,9 @@
             this.folderDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.statBar.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderStart)).BeginInit();
@@ -81,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFontColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // ofdChooseSrcDoc
@@ -146,7 +148,7 @@
             // rdoOrdered
             // 
             this.rdoOrdered.AutoSize = true;
-            this.rdoOrdered.Location = new System.Drawing.Point(325, 32);
+            this.rdoOrdered.Location = new System.Drawing.Point(259, 32);
             this.rdoOrdered.Name = "rdoOrdered";
             this.rdoOrdered.Size = new System.Drawing.Size(250, 19);
             this.rdoOrdered.TabIndex = 4;
@@ -155,6 +157,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rdoNames);
             this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.rdoSolid);
             this.groupBox1.Controls.Add(this.rdoOrdered);
@@ -165,8 +168,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "水印类型设置";
             // 
+            // rdoNames
+            // 
+            this.rdoNames.AutoSize = true;
+            this.rdoNames.Location = new System.Drawing.Point(515, 32);
+            this.rdoNames.Name = "rdoNames";
+            this.rdoNames.Size = new System.Drawing.Size(145, 19);
+            this.rdoNames.TabIndex = 19;
+            this.rdoNames.Text = "添加单位名称水印";
+            this.rdoNames.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(715, 16);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(55, 55);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 18;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnEditNames);
             this.groupBox2.Controls.Add(this.numOrderEnd);
             this.groupBox2.Controls.Add(this.numOrderStart);
             this.groupBox2.Controls.Add(this.label6);
@@ -179,6 +205,16 @@
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "水印文本设置";
+            // 
+            // btnEditNames
+            // 
+            this.btnEditNames.Location = new System.Drawing.Point(660, 29);
+            this.btnEditNames.Name = "btnEditNames";
+            this.btnEditNames.Size = new System.Drawing.Size(110, 26);
+            this.btnEditNames.TabIndex = 8;
+            this.btnEditNames.Text = "编辑单位列表";
+            this.btnEditNames.UseVisualStyleBackColor = true;
+            this.btnEditNames.Click += new System.EventHandler(this.btnEditNames_Click);
             // 
             // numOrderEnd
             // 
@@ -499,18 +535,6 @@
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(715, 16);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 18;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -542,6 +566,7 @@
             this.statBar.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numOrderEnd)).EndInit();
@@ -555,7 +580,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picFontColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,6 +625,8 @@
         private System.Windows.Forms.NumericUpDown numRotation;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.RadioButton rdoNames;
+        private System.Windows.Forms.Button btnEditNames;
     }
 }
 

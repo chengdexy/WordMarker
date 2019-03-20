@@ -59,7 +59,8 @@ namespace WordMarker
                         //单位名称模式
                         foreach (string str in markNames)
                         {
-                            CreatDocWithMarkText(str);
+                            var count = str.Length;
+                            CreatDocWithMarkText(str, count);
                         }
                         break;
                     case MarkKind.Numbers:
@@ -365,10 +366,11 @@ namespace WordMarker
         }
         #endregion
         #region aspose相关
-        private void CreatDocWithMarkText(string markText)
+        private void CreatDocWithMarkText(string markText, int count = 0)
         {
             Document doc = new Document(lblSource.Text.Trim());
-            InsertWatermarkText(doc, markText);
+            // 2019年3月20日，添加了count参数，如果传入了水印文字的字数，则匹配字数均匀分配高度。
+            InsertWatermarkText(doc, markText, count);
             string savePath;
             string srcFileName = Path.GetFileNameWithoutExtension(lblSource.Text.Trim());
             if (string.IsNullOrEmpty(lblTarget.Text))
@@ -406,14 +408,14 @@ namespace WordMarker
             return int.TryParse(str, out int result);
         }
 
-        private static void InsertWatermarkText(Document doc, string watermarkText)
+        private static void InsertWatermarkText(Document doc, string watermarkText, int count)
         {
             Shape watermark = new Shape(doc, ShapeType.TextPlainText);
 
             watermark.TextPath.Text = watermarkText;    //水印文本
             watermark.TextPath.FontFamily = markFont;    //水印字体
             watermark.Width = markWidth;  //水印宽度
-            watermark.Height = markHeight; //水印高度 (px)
+            watermark.Height = count == 0 ? markHeight : markWidth / count; //水印高度 (px) 
 
             watermark.Rotation = markRotation;   //旋转
 

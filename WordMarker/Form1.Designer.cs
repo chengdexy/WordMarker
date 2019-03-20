@@ -559,7 +559,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WordMarker v3.0 by Chengdexy.cn";
+            this.Text = "WordMarker v3.1 by Chengdexy.cn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.statBar.ResumeLayout(false);
